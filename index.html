@@ -14,79 +14,87 @@
 
   <link rel="stylesheet" href="css/normalize.css">
   <link rel="stylesheet" href="css/main.css">
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
 </head>
+
 
 <body>
 
 <header>
 
-</header>
-
-  <nav>
-    <a href="index.html">
-      <img src="img/BukkuLogo.png" alt="">
-    </a>
-      <a class="hamburger" href=""><i class="fa fa-bars"></i></a>
-      <ul>
-        <li><a href="myclub.html">My Club</a></li>
-        <li><a href="lists.html">Lists</a></li>
-        <li><a href="reviews.html">Reviews</a></li>
-        <li><a href="events.html">Events</a></li>
-      </ul>
-    </nav>
+</header>  
 
 
+<div class="homeback">
 
-    <section>
+  <img src="img/BukkuLogo_White.svg" alt="" width="300px">
 
-      <div class="grid-wrapper articles">
-        <article class="col-half">
-          <div>
-            <h2>JOIN A CLUB NEAR YOU</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius soluta incidunt, eum quos consequuntur aliquam nobis velit mollitia iste, natus ex repellendus delectus quisquam et quae, in atque a. </p>
-            <button type="button" id="showModal">Join A Bookclub</button>
-          </div>
-        </article>
+  <section>
+    <div class="homebody">
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius soluta incidunt, eum quos consequuntur aliquam nobis velit mollitia iste, natus ex lorem iste repellendus delectus quisquam et quae, in atque a.</p>
+    
 
-        <article class="col-half">
-          <h2>LOGIN TO MY BOOK CLUB</h2>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius soluta incidunt, eum quos consequuntur aliquam nobis velit mollitia iste, natus ex repellendus delectus quisquam et quae, in atque a. </p>
-          <button>Login to Your Bookclub</button>
-        </article>
-      </div>
-
-      </section>
-
-      <div class="modal-background">
-      <div class="modal-content">
-                <img src="img/close.svg" class="close" width="20px">
-<!--                 <div class='close'> Close </div>  -->
-                <h2>Join A Bookclub</h2>
-          
-
-
-        <form action="" class="joinForm" method="post">
-          <label for="First Name">First Name</label>
-          <input type="text" name="firstName" id="firstName" placeholder="Enter your first name" name="firstName">
-          <label for="Last Name">Last Name</label>
-          <input type="text" name="lastName" id="lastName" placeholder="Enter your last name" name="last name">
-          <label for="Password">Password</label>
-          <input type="password" name="password" id="password" placeholder="Enter your password">
-          <label for="Enter your email address">Enter your email address</label>
-          <input type="emailAddress" name="Email Address" id="email" placeholder="Enter your email address">  
-          <div class="button-space"</div>
-          <button type="Submit"> Get Started </button> 
-        </form>
-
-        
-
-      </div>
-      </div>
-
+    <form action="" class="enterZip" method="GET">
+      <input type="text" name="zipCode" id="firstName" placeholder="Enter zipcode to find a club near you" name="zipCode">
       
 
+      <a href="findclub.html" class="btn">FIND</a>
 
-      <script src="js/vendor/jquery-1.12.0.min.js"></script>
-      <script src="js/main.js"></script>
+    </form>
+
+    <p>Already a member? <a id="showModal" href="#">LOGIN</a></p> 
+    </div>
+
+  </section>
+
+</div>
+  
+
+
+<div class="modal-background">
+  <div class="modal-content">
+    
+    <img src="img/close.svg" class="close" width="20px">
+    <h2>Login</h2>
+
+    <form action="" class="joinForm" method="post">
+
+      <label for="User Name">User Name</label>
+      <input type="text" name="userName" id="userName" placeholder="Enter your user name" name="userName">
+
+      <label for="Password">Password</label>
+      <input type="password" name="password" id="password" placeholder="Enter your password">
+
+    <button class="button-space" type="Submit"> SUBMIT </button> 
+
+    </form>
+
+          
+  </div>
+</div>
+
+    <footer>
+        <div class="wrap">
+            <li><a href="index.html">About</a></li>
+            <li><a href="index.html">Contact</a></li>
+            
+            <div class="social-links">
+                    <a href="https://www.facebook.com/"><i class="fa fa-facebook-square" aria-hidden="true"></i></a>
+                    <a href="https://www.twitter.com/"><i class="fa fa-twitter-square" aria-hidden="true"></i></a>
+                    <a href="https://www.instagram.com/"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+            </div>
+        
+        </div>
+
+    </footer>
+      
+
+  <script src="js/vendor/jquery-1.12.0.min.js"></script>
+  <script src="js/main.js"></script>
+<!--   <script src="js/home.js"></script> -->
+
 </body>
+
 </html>

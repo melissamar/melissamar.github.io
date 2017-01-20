@@ -12,16 +12,17 @@ body {
 	-webkit-font-smoothing: antialiased;
 	font-weight: 600;
 	color: #3C4A53;
-	text-align: center;
 	line-height: 28px;
-	margin: 0;
-	padding-top: 150px;
+	display: flex;
+	min-height: 100vh;
+	flex-direction: column;
 }
 
 /* Fix for responsive images */
 img {
   max-width: 100%;
 }
+
 
 
 
@@ -35,29 +36,62 @@ p {
 	line-height: 1.4;
 }
 
+.my-book-club p {
+	margin-bottom: 50px;
+	margin-bottom: 10px;
+	margin-top: 10px;
+	margin-left: 50px;
+}
+
 h1 {
 	text-align: center;
 	margin-bottom: 45px;
 }
 
 h2 {
-	color: #0099c4;
+	color: #b60e71;
 }
 
 h3 {
-	margin-bottom: 10px;
+	margin-bottom: 0px;
+	margin-top: 0px;
+}
+
+h4 {
+	margin-top: 10px;
 }
 
 a {
 	text-decoration: none;
-	color: #cccccc;
+	color: #ffffff;
 	font-weight: 600;
 	transition: all .3s ease-in-out;
 }
 
 a:hover {
-	color: #ffffff;
+	color: #f4f4f4;
 }
+
+
+/* ----------------------------------------
+Homepage
+------------------------------------------- */
+
+.homebody {
+	width: 50%;
+	text-align: left;
+	color: #ffffff;
+	margin: 40px auto 200px auto;
+}
+
+.homeback {	
+	padding-top: 50px;
+	background: #D38312; /* fallback for old browsers */
+	background: -webkit-linear-gradient(to left, #D38312 , #A83279); /* Chrome 10-25, Safari 5.1-6 */
+	background: linear-gradient(to left, #D38312 , #A83279); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+	text-align: center;
+}
+
 
 
 /* ----------------------------------------
@@ -82,71 +116,117 @@ li {
 Layout
 ------------------------------------------- */
 
-section {
+/*.homeback p {
+
+}
+
+.homeback section {
+
+}*/
+
+.grid-wrapper {
+	display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin-top: 175px;
+}
+
+.content-wrapper {
+	padding: 100px;
+	max-width: 1200px;
+	margin: 0 auto;
+}
+
+.site-content {
+  flex: 1;
+  padding-bottom: 40px;
+}
+
+.my-club-columns section {
+	padding: 5px 10px;
+	margin-right: 100px;
+  	text-align: left;
+}
+
+
+
+.my-club-columns article {
 	width: 80%;
 	padding: 5px 10px;
-	margin-left: 100px;
+	margin-left: 200px;
 	margin-right: 100px;
 	margin-bottom: 20px;
 	display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  text-align: left;
+  	flex-direction: row;
+  	flex-wrap: wrap;
+  	justify-content: space-between;
+  	text-align: left;*/
+}
+
+section {
+	width: 90%;
+	margin-left: 50px;
+	margin-right: 200px;
+}
+
+.reviews article {
+	width: 70%;
+}
+
+.fa-star {
+  	color: #f7941d;
+  	margin-bottom: 10px;
 }
 
 p span {
     display: block;
 }
 
+/*Make sure these are general, otherwise move to class*/
 aside {
 	text-align: left;
-	padding-left: 150px;
+	padding-left: 250px;
+	margin-bottom: 100px;
 }
 
-.grid-wrapper {
-	display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-}
-
-.wrap {
-	max-width: 1000px;
+#map {
+	height: 600px;
 	width: 100%;
-	margin: 0 auto;
+	padding-bottom: 0px;
 }
 
-.col-half {
-	width: 49.2%;
-}
-
-.content1 {
-	color: red;
-	display: flex;
-	flex-direction: row;
-	justify-content: space-between;
-}
-
-.content2 {
-	color: red;
-	display: flex;
-	flex-direction: row;
-	justify-content: space-between;
-}
-
-.reviews {
+.box {
+	display: inline-block;
+	width: 50%;
+	margin-right: 20px;
+	margin-left: 50px;
 	text-align: left;
+	margin-bottom: 50px;
+
 }
 
-.events {
-	text-align: left;
-	display: flex;
-	flex-wrap: wrap;
-	justify-content: space-between;
+.book {
+    max-width: 100%;
+    float: left;
+    margin-left: 20%;
 }
 
-.fa-star {
-  	color: orange;
+.section-body {
+	margin-top: 13%;
+	margin-left: 20%;
+}
+
+.row1 {
+	margin-left: 20%;
+}
+
+.box1 {
+	margin-left: 0;
+}
+
+.box1 p {
+	margin-right: 20%;
+	margin-bottom: 100px;
 }
 
 /* ----------------------------------------
@@ -164,7 +244,9 @@ nav {
 	top: 0;
 	left: 0;
 	right: 0;
-	background-color: #666666;
+	background: #D38312; /* fallback for old browsers */
+	background: -webkit-linear-gradient(to left, #D38312 , #A83279); /* Chrome 10-25, Safari 5.1-6 */
+	background: linear-gradient(to left, #D38312 , #A83279); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 	z-index: 100;
 }
 
@@ -174,17 +256,42 @@ nav li {
 }
 
 
+.header-align {
+	float: left;
+	margin: 15px;
+}
+
+.menu-primarynav {
+	float: right;
+	margin-right: 175px;
+	margin-top: 30px;
+}
+
+.hamburger {
+	display: none;
+	width: 100px;
+}
 
 
 /* ----------------------------------------
 Buttons
 ------------------------------------------- */
 
-button {
+.homebody .btn {
+	text-decoration: none;
+	color: #ffffff;
+	font-weight: 600;
+	transition: all .3s ease-in-out;	
+}
+
+
+/*Add .btn class to any anchors that should look like buttons*/
+button,
+.btn {
+	display: inline-block;
 	cursor: pointer;
 	outline: 0;
-	border: 2px solid #44545E;
-	color: #44545E;
+	border: 1px solid #ffffff;
 	padding: 8px 25.5px;
 	background-color: transparent;
 	font-weight: 500;
@@ -192,12 +299,29 @@ button {
 	font-size: 12.299px;
 	letter-spacing: 1.2px;
 	transition: all .3s ease-in-out;
+	text-align: center;
+	margin-left: 20px;
 }
 
-button:hover {
-	background-color: #44545E;
+button:hover,
+.btn:hover {
+	background-color: #000000;
+	border: 1px solid #000000;
 	color: white;
 	font-weight: 600;
+}
+
+.button-space {
+	display: inline-block;
+	cursor: pointer;
+	padding: 8px 25.5px;
+	background-color: #888888;
+	color: #ffffff;
+	font-weight: 500;
+	text-transform: uppercase;
+	font-size: 12.299px;
+	letter-spacing: 1.2px;
+	transition: all .3s ease-in-out;
 }
 
 /* ----------------------------------------
@@ -205,10 +329,16 @@ Modal
 ------------------------------------------- */
 
 
+.modal-content {
+  padding: 40px 20px;
+  color: #444;
+  background-color: white;
+  width: 40%;
+}
+
 .modal-background {
   padding: 40px;
   background-color: rgba(0, 0, 0, .3);
-
   /* YOU DO: Add code here to position the modal.
   We want it to be fixed in the middle of the screen. */
   position: fixed;
@@ -227,34 +357,36 @@ Modal
    */
 
 
-form {
-  display: block;
-  	text-align: left;
-
-}
-
-label, input {
-	display: block;
-	padding-top: 20px;
-}
-
-input {
-	width: 100%;
-}
-
-
-.modal-content {
-  padding: 40px 20px;
-  color: #444;
-  background-color: white;
-  width: 60%;
-
-}
-
 
 /* ----------------------------------------
 Forms
 ------------------------------------------- */
+
+
+form {
+  	text-align: left;
+	display: flex;
+	flex-direction: row;
+	text-align: center;
+}
+
+
+label, input {
+	display: block;
+	padding-top: 3px;
+	max-width: 400px;
+}
+
+.modal-content {
+	display: block;
+}
+
+
+input {
+	width: 100%;
+	color: #666666;
+}
+
 
 .error {
 	border: 2px solid #F95758;
@@ -263,8 +395,173 @@ Forms
 .close {
 	float: right;
 	vertical-align: text-top;
+	cursor: pointer;
 }
+
+
+
+
 
 /* ----------------------------------------
 Footer
 ------------------------------------------- */
+footer {
+	background-color: #000000;
+	height: 75px;
+	overflow: hidden;
+	margin-top: 100px;
+}
+
+.wrap {
+	max-width: 1000px;
+	width: 100%;
+	margin: 0 auto;
+	display: inline-block;
+}
+
+footer .wrap {
+	display: flex;
+	flex-direction: row;
+}
+
+footer li {
+	padding: 30px 15px;
+	display: inline-block;
+	float: right;
+}
+
+.social-links a {
+	font-size: 30px;
+	padding: 15px;
+	margin-bottom: 30px;
+	margin-top: 10px;
+	display: inline-block;
+	color: #ffffff;
+}
+
+
+
+
+/* ==========================================================================
+   Responsive
+========================================================================== */
+
+@media only screen and (max-width: 960px) {
+
+	ul.nav-a {
+		display: none;
+	}
+
+	nav {
+		height: 80px;
+	}
+
+	.hamburger {
+		display: inline-block;
+		font-size: 30px;
+		float: right;
+	}
+
+	.col {
+		width: 30%;
+	}
+
+	.menu-primarynav {
+		text-align: right;
+		display: block;
+	}
+
+	.container {
+		flex-wrap: wrap;
+	}
+
+}
+
+
+
+
+
+@media only screen and (max-width: 660px) {
+	html {
+		font-size: 14px;
+	}
+
+	ul.nav-a {
+		display: none;
+	}
+
+	.hamburger {
+		display: inline-block;
+		font-size: 30px;
+		margin-right: 20px;
+	}
+
+	.col {
+		width: 48%;
+	}
+
+	.menu-primarynav {
+		text-align: right;
+	}
+
+	.homeback img {
+		width: 250px;
+	}
+
+	.homebody {
+		width: 80%;
+	}
+
+	.header-align {
+		width: 150px;
+		margin-top: 25px;
+	}
+
+	.modal-content {
+		width: 80%;
+}
+
+}
+
+
+
+
+
+@media only screen and (max-width: 450px) {
+	html {
+	font-size: 13px;
+	}
+
+	.col {
+		width: 100%;
+	}
+
+	.homeback img {
+		width: 200px;
+	}
+
+	.homeback form {
+		flex-wrap: wrap;
+		width: 100%;
+	}
+
+	button,
+	.btn {
+	width: 100%;
+	margin-top: 20px;
+	margin-left: 0px;
+	}
+
+	input {
+		height: 45px;
+	}
+
+	.modal-content {
+		width: 90%;
+}
+
+
+
+}
+
+

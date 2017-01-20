@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="apple-touch-icon" href="apple-touch-icon.png">
+        <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+    
+        <link href="https://fonts.googleapis.com/css?family=Lato|Raleway:400,600" rel="stylesheet">
+
+
+        <link rel="stylesheet" href="css/normalize.css">
+        <link rel="stylesheet" href="css/main.css">
+
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    </head>
+    <body>
+        <!-- Add your site content here. Keep it pretty and use indentation :) -->
+        <header>
+
+        </header>
+
+<nav>
+    <div class="header-align">
+    <a href="index.html">
+    <img src="img/BukkuLogo_whitetext.svg" alt="Bukku Logo" width="200px">
+    </div>
+
+    <div class="menu-primarynav">
+    <a class="hamburger" href=""><i class="fa fa-bars"></i></a>
+        <ul>
+            <li><a href="myclub.html">My Club</a></li>
+            <li><a href="findclub.html">Find A Club</a></li>
+            <li><a href="reviews.html">Reviews</a></li>
+            <li><a href="events.html">Events</a></li>
+        </ul>
+    </div>
+    
+</nav>
+
+
+<div class="content-wrapper">
+  <h2>Find A Club</h2>
+
+<!--     <form action="" class="joinForm" method="post">
+        <p>Find a bookclub near you...</p>
+         
+         <select name="author" id="authorSelect">
+            <option value="">Within 2 miles</option>
+            <option value="suess">Within 10 miles</option>
+            <option value="carroll">Within 25 miles</option>
+        </select>
+    </form> -->
+
+    <form id="find-club-zip" action="" class="enterZip" method="GET">
+      <input type="text" name="zipCode" id="zipCode" placeholder="Enter your zipcode">
+      
+      
+    <button class="button-space" type="Submit"> FIND </button>
+<!--       <button type="submit" class="btn">FIND</a>
+ -->
+    </form>
+</div>
+
+    <div id="map"></div>
+
+
+
+    <footer>
+        <div class="wrap">
+            <li><a href="index.html">About</a></li>
+            <li><a href="index.html">Contact</a></li>
+            
+            <div class="social-links">
+                    <a href="https://www.facebook.com/"><i class="fa fa-facebook-square" aria-hidden="true"></i></a>
+                    <a href="https://www.twitter.com/"><i class="fa fa-twitter-square" aria-hidden="true"></i></a>
+                    <a href="https://www.instagram.com/"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+            </div>
+        
+        </div>
+
+    </footer>
+
+    <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC-xI2EfFnKySmN5evdNwZWHCvwzpJwxWc&callback=initMap">
+    </script>
+        <script src="js/vendor/jquery-1.12.0.min.js"></script>
+        <script src="js/main.js"></script>
+    </body>
+</html>

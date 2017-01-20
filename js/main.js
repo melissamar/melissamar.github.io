@@ -1,6 +1,7 @@
 // When user clicks button #showmodal
 	// Fade in background .modal-background
-$('#showModal').on('click', function () {
+$('#showModal').on('click', function (event) {
+	event.preventDefault();
 	$('.modal-background').fadeIn('fast')
     $(".modal-background")
     	.css("display", "flex")
@@ -12,8 +13,8 @@ $('#showModal').on('click', function () {
 // When user clicks close button #close
 	// Fade out .modal-background
 $('.close').on('click', function () {
-	$('.modal-background').fadeOut('fast')
-	$('.modal-content').hide();
+	$('.modal-background').fadeOut('fast');
+	// $('.modal-content').hide();
 });
 
 // Make it rain!
@@ -43,13 +44,59 @@ $('.close').on('click', function () {
 // If user clicks join
 	// Show the join form 
 
+var map;
 
-$('form').on('submit', function(e) {
+function initMap() {
+	var uluru = {lat: -25.363, lng: 131.044};
+	map = new google.maps.Map(document.getElementById('map'), {
+		zoom: 4,
+		center: uluru
+	});
+	var marker = new google.maps.Marker({
+		position: uluru,
+		map: map
+	});
+
+
+
+
+}
+
+// When the find the club form is submitted
+$('#find-club-zip').on('submit', function(e) {
+	// Prevent the page from reloading
 	e.preventDefault();
+
+	// Find out what zip code the user entered into the #zipCode field
+	var zipCode = $('#zipCode').val();
+
+	// Optional: could add validation here to make sure user entered a value
+
+	// Make a request to Google's Geocode API to get the latitude and longitude for the zip code.
+	$.ajax({
+      type: 'GET',
+      url: 'https://maps.googleapis.com/maps/api/geocode/json?components=postal_code:' + zipCode + '&key=AIzaSyC-xI2EfFnKySmN5evdNwZWHCvwzpJwxWc',
+      success: function( response ) {
+      	// If the request for lat/lng is successful:
+
+        // Get the latitude from the response object
+        var latitude = response.results[0].geometry.location.lat;
+
+        // Get the longitude from the response object
+        var longitude = response.results[0].geometry.location.lng;
+
+        // Format the latitude/longitude pair in Google API's formatting
+        var latLng = new google.maps.LatLng(latitude, longitude);
+
+        // Pan (move) the map to that zip code
+        map.panTo(latLng);
+
+        // Zoom in on location. To zoom in more, make number higher.
+        map.setZoom(12);
+      }
 });
-
-
-
+	
+});
 
 
 // If user clicks close button on modal
@@ -70,60 +117,30 @@ $('#apply-form input').blur(function()
 });
 
 
-	// If user hasn't filled out First Name Field
+
+	// If user hasn't filled out user Name Field
 		// Add an error class
 	// Else 
 		// Remove Error Class
 
-if (firstName === "") {
-	$('#firstName').addClass('error');
-} else {
-	$('#firstName').removeClass('error')
-}
-
-	// If user hasn't filled out Last Name Field
-		// Add an error class
-	// Else 
-		// Remove Error Class
-
-if (lastName === "") {
-	$('#lastName').addClass('error');
-} else {
-	$('#lastName').removeClass('error')
-}
+// if (userName === "") {
+// 	$('#userName').addClass('error');
+// } else {
+// 	$('#userName').removeClass('error')
+// }
 
 	// If user hasn't filled out Password Field
 		// Add an error class
 	// Else 
 		// Remove Error Class
 
-if (password === "") {
-	$('#password').addClass('error');
-} else {
-	$('#password').removeClass('error')
-}
+// if (password === "") {
+// 	$('#password').addClass('error');
+// } else {
+// 	$('#password').removeClass('error')
+// }
 
-	// If user hasn't filled out Re-enter Password Field
-		// Add an error class
-	// Else 
-		// Remove Error Class
 
-if (firstName === "") {
-	$('#firstName').addClass('error');
-} else {
-	$('#firstName').removeClass('error')
-}
-
-	// If user hasn't filled out Email Field
-		// Add an error class
-	// Else 
-		// Remove Error Class
-
-if (email === "") {
-	$('#email').addClass('error');
-} else {
-	$('#email').removeClass('error')
-}
 
 
 // If First Name is not blank AND Last Name is not blank AND  (#first-name.val() !== '')
@@ -153,6 +170,8 @@ if (email === "") {
 // READING LISTS
 
 // User can click button to add books to reading list
+
+
 
 
 
